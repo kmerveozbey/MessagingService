@@ -222,17 +222,24 @@ namespace MessagingService.API.Controllers
                 if (!ModelState.IsValid)
                 {
                     return Problem("Mesaj bilgilerini eksiksiz giriniz.");
-                }
-                /*engellenen listesinde ekli mi bakılacak*/
-                var blocklist = _blockListService.GetByConditions(x => x.BlockedUserName == model.ReceiverUserName && x.HinderingUserName == senderUserName).Data;
-                if (blocklist != null)
-                {
-                    return Problem("Mesajınız iletilemedi.");
-                }
+                }                
                 var senderuser = _userService.GetById(senderUserName).Data;
                 if (senderuser == null)
                 {
                     return Problem("Sistemde kullanıcı bilgisi bulunamadı.");
+                }
+                var receiveruser = _userService.GetById(model.ReceiverUserName).Data;
+                if (receiveruser == null)
+                {
+                    return Problem("Mesaj gönderilecek kullanıcı sistemde kayıtlı değil.");
+                }
+                model.SenderUserName = senderuser.UserName;
+                model.ReceiverUserName = receiveruser.UserName;
+                /*engellenen listesinde ekli mi bakılacak*/
+                var blocklist = _blockListService.GetByConditions(x => x.BlockedUserName == model.SenderUserName && x.HinderingUserName == receiveruser.UserName).Data;
+                if (blocklist != null)
+                {
+                    return Problem("Mesajınız iletilemedi.");
                 }
                 MessageViewModel message = new MessageViewModel()
                 {
@@ -241,13 +248,6 @@ namespace MessagingService.API.Controllers
                     MessageID = Guid.NewGuid(),
                     SendDate = DateTime.Now,
                 };
-
-
-                var receiveruser = _userService.GetById(model.ReceiverUserName).Data;
-                if (receiveruser == null)
-                {
-                    return Problem("Mesaj gönderilecek kullanıcı sistemde kayıtlı değil.");
-                }
                 message.ReceiverUserName = receiveruser.UserName;
                 var result = _messageService.Add(message);
                 if (!result.IsSuccess)

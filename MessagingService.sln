@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingService.API", "MessagingService.API\MessagingService.API.csproj", "{BB5E0B2C-F50A-4B23-ADFE-233F3930C75F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingService.API", "MessagingService.API\MessagingService.API.csproj", "{BB5E0B2C-F50A-4B23-ADFE-233F3930C75F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingService.DAL", "MessagingService.DAL\MessagingService.DAL.csproj", "{9B0DB2FB-9828-44B7-A86B-CA25A992B691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingService.DAL", "MessagingService.DAL\MessagingService.DAL.csproj", "{9B0DB2FB-9828-44B7-A86B-CA25A992B691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingService.Entity", "MessagingService.Entity\MessagingService.Entity.csproj", "{0E2996D0-9992-4276-82F5-8DC648D821C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingService.Entity", "MessagingService.Entity\MessagingService.Entity.csproj", "{0E2996D0-9992-4276-82F5-8DC648D821C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagingService.BLL", "MessagingService.BLL\MessagingService.BLL.csproj", "{3D0BD25F-A19D-4C18-9C09-670EDCC6D3A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessagingService.BLL", "MessagingService.BLL\MessagingService.BLL.csproj", "{3D0BD25F-A19D-4C18-9C09-670EDCC6D3A6}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F6FF3B7A-8BE6-4DBF-9F78-D9CD7CC9515F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3D0BD25F-A19D-4C18-9C09-670EDCC6D3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D0BD25F-A19D-4C18-9C09-670EDCC6D3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D0BD25F-A19D-4C18-9C09-670EDCC6D3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6FF3B7A-8BE6-4DBF-9F78-D9CD7CC9515F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6FF3B7A-8BE6-4DBF-9F78-D9CD7CC9515F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6FF3B7A-8BE6-4DBF-9F78-D9CD7CC9515F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6FF3B7A-8BE6-4DBF-9F78-D9CD7CC9515F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

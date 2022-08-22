@@ -40,6 +40,19 @@ builder.Services.AddScoped<IBlockListService, BlockListService>();
 builder.Services.AddScoped<IActivityLogListRepo, ActivityLogListRepo>();
 builder.Services.AddScoped<IActivityLogListService, ActivityLogListService>();
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policyBuilder =>
+    {
+        policyBuilder
+            .SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+            .AllowCredentials()
+            .AllowAnyHeader();
+    });
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

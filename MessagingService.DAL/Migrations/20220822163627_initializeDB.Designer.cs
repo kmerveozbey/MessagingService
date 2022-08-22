@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MessagingService.DAL.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220821075546_initializeDB")]
+    [Migration("20220822163627_initializeDB")]
     partial class initializeDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

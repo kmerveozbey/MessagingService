@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  messagingservice.api:
+    image: ${DOCKER_REGISTRY-}messagingserviceapi
+    build:
+      context: .
+      dockerfile: MessagingService.API\Dockerfile
+    networks:
+      - appnetwork
+    ports:
+      - "5045:80"
+  messagingservice.db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: c_appmssql
+    user: root
+    hostname: localhost
+    environment:
+      SA_PASSWORD: "314159.Pi"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ms

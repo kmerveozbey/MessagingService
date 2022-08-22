@@ -148,6 +148,19 @@ namespace MessagingService.BLL.Implementations
             }
         }
 
+
+        public void Login(TViewModel model)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }     
     }
 }
 
